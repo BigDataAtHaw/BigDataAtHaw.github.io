@@ -1,0 +1,14 @@
+# HOw to read and write 
+
+## Reading
+* File f = new File(path);
+* try ( BufferedReader bufferedReader = new BufferedReader(new FileReader(file))){
+* bufferedReader.readLine();
+
+
+##Writing
+
+    try (Writer writer = new BufferedWriter(new OutputStreamWriter(
+              new FileOutputStream("filename.txt"), "utf-8"))) {
+       writer.write("something");
+    }

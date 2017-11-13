@@ -1,0 +1,35 @@
+# Lamdas
+* (int x, int y) -> {return x+y;}
+* () -> { String name = "Lambda"; System.out.println("Hallo"
+       + name); }
+* @FunctionalInterface
+public interface Runnable { public abstract void run();
+}
+
+* @FunctionalInterface
+public interface Comparator<T> { int compare(T o1, T o2); boolean equals(Object obj);
+}
+
+* Comparator<String> vergleichDerLaenge = (String str1,
+       String str2) -> {
+return Integer.compare(str1.length(), str2.length()); };
+System.out.println(vergleichDerLaenge.compare("Hallo", "Welt"));
+
+* Collections.sort(namen, (str1, str2) ->
+Integer.compare(str1.length(), str2.length()));
+
+* @FunctionalInterface
+public interface VerrechnungZweiInts {
+public int verrechne(int zahl1, int zahl2);
+}
+
+public class ZugriffAufObjekt {
+private int offset = 23;
+private VerrechnungZweiInts addition = (zahl1, zahl2) -> { return zahl1 + zahl2; }; private VerrechnungZweiInts additionMitOffset =
+(zahl1, zahl2) -> { offset += 2; return zahl1 + zahl2 + offset; };
+
+public void berechne() { System.out.println(addition.verrechne(23, 42)); System.out.println(additionMitOffset.verrechne(23, 42)); offset = 0; System.out.println(additionMitOffset.verrechne(23, 42));
+}
+
+public static void main(String[] args) { ZugriffAufObjekt zao = new ZugriffAufObjekt(); zao.berechne();
+} }
