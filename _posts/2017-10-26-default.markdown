@@ -1,9 +1,0 @@
-# Default Methoden
-
-public interface TextVerarbeitung1 {
-public default String werteAus(String text) {
-return TextVerarbeitung1.class.getName() + ": " + text; }
-}
-
-
-
