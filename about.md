@@ -4,4 +4,4 @@ title: About
 permalink: /about/
 ---
 
-This is my blog. There are many blogs. But this is mine.
+Dokumentation der Projekt Gruppe Big Data 2017 der Haw Hamburg.
